@@ -1,7 +1,7 @@
 # Mortgage Calculator
 
 Simple mortgage calculator built with **HTML, CSS and JavaScript**.  
-This was one of my first projects (2024) and I keep it online as part of my learning journey.  
+This was one of my first projects (2023) and I keep it online as part of my learning journey.  
 
 ## Features
 - Calculates monthly payment based on:
