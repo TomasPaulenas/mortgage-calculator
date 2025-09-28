@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/jpeg" href="/src/pngtree-vector-mortgage-icon-png-image_4174169.jpg" />
+    <title data-i18n="meta.title">Mortgage Calculator — Tomas Paulenas</title>
+    <link rel="stylesheet" href="src/style.css" />
+  </head>
+  <body>
+    <header class="nav">
+      <div class="container nav-inner">
+        <div class="brand">Mortgage</div>
+        <nav class="nav-links">
+          <a href="#calc" data-i18n="nav.calc">Calculator</a>
+          <a href="#notes" data-i18n="nav.notes">Notes</a>
+        </nav>
+        <button id="lang-toggle" class="btn ghost" aria-label="Change language">ES</button>
+      </div>
+    </header>
+
+    <main class="container">
+      <section id="calc" class="card">
+        <h1 class="title" data-i18n="hero.title">Mortgage Calculator</h1>
+        <p class="lead" data-i18n="hero.lead">Estimate your monthly payment with principal and interest. Results are indicative only.</p>
+
+        <form id="calc-form" class="form" novalidate>
+          <label class="field">
+            <span class="label" data-i18n="form.price">Property price</span>
+            <input id="price" name="price" type="number" min="0" step="0.01" placeholder="250000" required />
+            <small class="hint" data-i18n="hint.currency">EUR</small>
+            <small class="error" data-error-for="price"></small>
+          </label>
+
+          <label class="field">
+            <span class="label" data-i18n="form.down">Down payment</span>
+            <input id="down" name="down" type="number" min="0" step="0.01" placeholder="50000" />
+            <small class="hint" data-i18n="hint.optional">Optional</small>
+            <small class="error" data-error-for="down"></small>
+          </label>
+
+          <div class="row">
+            <label class="field">
+              <span class="label" data-i18n="form.rate">Interest rate (APR %)</span>
+              <input id="rate" name="rate" type="number" min="0" max="30" step="0.01" placeholder="3.5" required />
+              <small class="error" data-error-for="rate"></small>
+            </label>
+
+            <label class="field">
+              <span class="label" data-i18n="form.years">Term (years)</span>
+              <input id="years" name="years" type="number" min="1" max="40" step="1" placeholder="30" required />
+              <small class="error" data-error-for="years"></small>
+            </label>
+          </div>
+
+          <div class="actions">
+            <button class="btn primary" type="submit" data-i18n="form.calculate">Calculate</button>
+            <button class="btn ghost" type="reset" id="reset" data-i18n="form.reset">Reset</button>
+          </div>
+
+          <p class="note" data-i18n="legal">This is an estimate and not financial advice.</p>
+        </form>
+      </section>
+
+      <section class="kpis">
+        <div class="kpi">
+          <div class="kpi-label" data-i18n="results.monthly">Monthly payment</div>
+          <div id="res-monthly" class="kpi-value">—</div>
+        </div>
+        <div class="kpi">
+          <div class="kpi-label" data-i18n="results.total">Total paid</div>
+          <div id="res-total" class="kpi-value">—</div>
+        </div>
+        <div class="kpi">
+          <div class="kpi-label" data-i18n="results.interest">Total interest</div>
+          <div id="res-interest" class="kpi-value">—</div>
+        </div>
+      </section>
+
+      <section id="schedule" class="card">
+        <h2 class="subtitle" data-i18n="results.schedule">Amortization schedule</h2>
+        <div class="table-wrap">
+          <table id="schedule-table" class="table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th data-i18n="tbl.payment">Payment</th>
+                <th data-i18n="tbl.principal">Principal</th>
+                <th data-i18n="tbl.interest">Interest</th>
+                <th data-i18n="tbl.balance">Balance</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="notes" class="card">
+        <h2 class="subtitle" data-i18n="notes.title">Notes</h2>
+        <ul class="notes">
+          <li data-i18n="notes.n1">APR is divided by 12 to compute monthly interest.</li>
+          <li data-i18n="notes.n2">If APR is 0%, monthly payment is principal / months.</li>
+          <li data-i18n="notes.n3">Final installment is adjusted to bring balance to zero.</li>
+        </ul>
+      </section>
+    </main>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
