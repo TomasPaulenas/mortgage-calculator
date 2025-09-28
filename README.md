@@ -1,6 +1,6 @@
 # Mortgage Calculator
 
-A simple mortgage calculator built with **HTML, CSS, and vanilla JavaScript** (Vite for dev/build).  
+A mortgage calculator built with **HTML, CSS, and vanilla JavaScript** (Vite for dev/build).  
 Enter property price, down payment, APR %, and term (years) to see monthly payment, total paid, total interest, and an amortization table. Includes EN/ES toggle.
 
 ## Run
